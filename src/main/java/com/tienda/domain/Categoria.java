@@ -9,9 +9,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
+import java.util.List;
+ import jakarta.persistence.OneToMany;
 
 @Data
 @Entity
@@ -32,6 +36,10 @@ public class Categoria implements Serializable{
     
     @Column(name = "activo")
     private Boolean activo; 
+  
+    
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
     
 }
 

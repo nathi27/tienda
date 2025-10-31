@@ -71,19 +71,3 @@ public class ProjectConfig implements WebMvcConfigurer {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
