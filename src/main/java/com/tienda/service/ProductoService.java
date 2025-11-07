@@ -50,4 +50,21 @@ public class ProductoService {
         return productoRepository.findById(producto.getIdProducto()).orElse(null);
     }
     
+    //Lista de productos con precio inf y sup para la consulta ampliada
+    @Transactional(readOnly = true)
+
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
+
+        return productoRepository.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+
+    }
+    
+    //Lista de producto con precio inf y sup para la consulta jpql
+    @Transactional(readOnly=true)    
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        return productoRepository.metodoJPQL(precioInf, precioSup);
+    }
+    
+    
+ 
 }
